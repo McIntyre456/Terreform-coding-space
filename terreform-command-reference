@@ -1,1 +1,59 @@
-terreform-command-reference
+# 🌐 Terraform Command Reference Bank
+
+---
+
+## ✅ Setup & Initialization
+
+| Command | What it does |
+|--------|---------------|
+| `terraform init` | Initializes a Terraform project (downloads plugins/providers) |
+| `terraform version` | Shows your installed Terraform version |
+| `terraform validate` | Checks for syntax errors in `.tf` files |
+| `terraform fmt` | Formats your `.tf` files to standard style |
+
+---
+
+## 🛠️ Planning & Applying Infrastructure
+
+| Command | What it does |
+|--------|---------------|
+| `terraform plan` | Shows what Terraform *will do* (preview only) |
+| `terraform apply` | Actually creates or changes your infrastructure |
+| `terraform apply -auto-approve` | Skips the “yes” confirmation prompt |
+| `terraform destroy` | Destroys (deletes) everything in your `.tf` plan |
+
+---
+
+## 📁 Working with Files & State
+
+| Command | What it does |
+|--------|---------------|
+| `terraform show` | Displays the current state file in readable form |
+| `terraform state list` | Lists resources currently being tracked |
+| `terraform state show <resource_name>` | Shows details of one specific resource |
+| `terraform output` | Displays output variables (like IPs, URLs, etc.) |
+
+---
+
+## 📦 Modules & Workspaces (Advanced)
+
+| Command | What it does |
+|--------|---------------|
+| `terraform get` | Fetches modules used in your config |
+| `terraform workspace list` | Shows available workspaces |
+| `terraform workspace new <name>` | Creates a new workspace |
+| `terraform workspace select <name>` | Switches to a different workspace |
+
+---
+
+## 📝 Common `.tf` Example
+
+```hcl
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "web" {
+  ami           = "ami-123456"
+  instance_type = "t2.micro"
+}
